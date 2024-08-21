@@ -21,14 +21,13 @@ jobs:
       pull-requests: write # to be able to comment on released pull requests
     steps:
     - uses: actions/checkout@v4
-      with:
-        fetch-depth: 0
-        persist-credentials: false
     - uses: actions/setup-node@v4
       with:
         node-version: '20.x'
     - name: Install Dependencies
       run: npm install
+    - name: Test
+      run: echo ${{ secrets.GH_TOKEN }}
     - name: Deploy
       env:
         GITHUB_TOKEN: ${{ secrets.GH_TOKEN }}
