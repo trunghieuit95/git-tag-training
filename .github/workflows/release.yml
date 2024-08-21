@@ -5,8 +5,8 @@ name: Release Workflow
 # Controls when the workflow will run
 on:
   push:
-    tags:
-      - 'release-v*'
+    branches:
+      - 'main'
 
 permissions:
   contents: write
