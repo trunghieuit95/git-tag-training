@@ -27,7 +27,9 @@ jobs:
     - name: Install Dependencies
       run: npm install
     - name: Test
-      run: echo ${{ secrets.GH_TOKEN }}
+      env:
+        GITHUB_TOKEN: ${{ secrets.GH_TOKEN }}
+      run: echo GITHUB_TOKEN
     - name: Deploy
       env:
         GITHUB_TOKEN: ${{ secrets.GH_TOKEN }}
