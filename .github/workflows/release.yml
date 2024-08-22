@@ -33,12 +33,10 @@ jobs:
     - name: Install Dependencies
       run: npm ci
     - name: Test token
-      env:
-        GITHUB_TOKEN: ${{ secrets.GH_TOKEN_2 }}
       run: |
-        touch test.txt
-        echo "Hello, world!" > test.txt
-        git add test.txt
+        touch test2.txt
+        echo "Hello, world!" > test2.txt
+        git add test2.txt
         git commit -m "Add test file"
         git push
     - name: Deploy
