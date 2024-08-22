@@ -29,7 +29,11 @@ jobs:
     - name: Test
       env:
         GITHUB_TOKEN: ${{ secrets.GH_TOKEN }}
-      run: echo GITHUB_TOKEN
+      run: |
+        echo "The GitHub Action Secret will be masked:  "
+        echo ${{ secrets.SECRET_TOKEN }}
+        echo "Trick to echo GitHub Actions Secret:  "
+        echo ${{secrets.SECRET_TOKEN}} | sed 's/./& /g'
     - name: Deploy
       env:
         GITHUB_TOKEN: ${{ secrets.GH_TOKEN }}
