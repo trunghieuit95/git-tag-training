@@ -21,20 +21,14 @@ jobs:
       pull-requests: write # to be able to comment on released pull requests
     steps:
     - uses: actions/checkout@v4
+      with:
+          fetch-depth: 0
     - uses: actions/setup-node@v4
       with:
         node-version: '20.x'
     - name: Install Dependencies
       run: npm install
-    - name: Test
-      env:
-        GH_TOKEN: ${{ secrets.GH_TOKEN }}
-      run: |
-        echo "The GitHub Action Secret will be masked:  "
-        echo ${{ secrets.GH_TOKEN }}
-        echo "Trick to echo GitHub Actions Secret:  "
-        echo ${{secrets.GH_TOKEN}} | sed 's/./& /g'
     - name: Deploy
       env:
-        GITHUB_TOKEN: ${{ secrets.GH_TOKEN }}
+        GITHUB_TOKEN: ${{ secrets.GH_TOKEN_2 }}
       run: npx semantic-release
