@@ -32,14 +32,7 @@ jobs:
         node-version: '20.x'
     - name: Install Dependencies
       run: npm ci
-    - name: Test token
-      run: |
-        touch test2.txt
-        echo "Hello, world!" > test2.txt
-        git add test2.txt
-        git commit -m "Add test file"
-        git push
     - name: Deploy
       env:
-        GITHUB_TOKEN: ${{ secrets.GH_TOKEN_2 }}
+        GITHUB_TOKEN: ${{ secrets.GH_TOKEN }}
       run: npx semantic-release
