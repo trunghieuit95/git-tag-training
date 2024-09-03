@@ -1,3 +1,10 @@
+## [1.0.5](https://github.com/trunghieuit95/git-tag-training/compare/v1.0.4...v1.0.5) (2024-09-03)
+
+
+### Bug Fixes
+
+* update readme ([121f38c](https://github.com/trunghieuit95/git-tag-training/commit/121f38c935a7e7e5e84ef188a0569a0d7d6cbe60))
+
 ## [1.0.4](https://github.com/trunghieuit95/git-tag-training/compare/v1.0.3...v1.0.4) (2024-08-22)
 
 
